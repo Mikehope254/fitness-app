@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,13 +19,45 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        leading: Container(
-          margin: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.circular(10),
+        leading: GestureDetector(
+          onTap: () {
+            // Add your back navigation here
+          },
+          child: Container(
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Color(0xffF7F8F8),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            alignment: Alignment.center,
+            child: SvgPicture.asset(
+              'assets/icons/Arrow - Left 2.svg',
+              height: 20,
+              width: 20,
+            ),
           ),
         ),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              // Add your action here
+            },
+            child: Container(
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Color(0xffF7F8F8),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              alignment: Alignment.center,
+              width: 37,
+              child: SvgPicture.asset(
+                'assets/icons/dots.svg',
+                height: 10,
+                width: 20,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
